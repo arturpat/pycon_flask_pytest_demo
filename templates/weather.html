@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Weather {% endblock %}</h1>
+    <form method="post">
+        <label for="content">City</label>
+        <br>
+        <input name="city"
+               placeholder="City name"
+        >{{ request.form['content'] }}
+        <button type="submit">Get weather</button>
+    </form>
+    <br>
+    <h1>{% block weather %} Weather data {% endblock %}</h1>
+    <div class='weather'>
+        <p>{{ weather_data }}</p>
+    </div>
+{% endblock %}
