@@ -4,7 +4,7 @@ from unittest.mock import MagicMock, patch, call
 
 import pytest
 
-from backup_accuweather_proxy import AccuweatherProxy
+from accuweather_proxy import AccuweatherProxy
 
 
 @pytest.fixture
