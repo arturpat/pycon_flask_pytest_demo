@@ -1,10 +1,10 @@
 # HTML templates source: https://www.digitalocean.com/community/tutorials/how-to-use-web-forms-in-a-flask-application
 from flask import Flask, render_template, request, url_for, flash, redirect
 
-from accuweather_proxy import AccuweatherProxy
+from solution_accuweather_proxy import AccuweatherProxy
 
 app = Flask(__name__)
-app.secret_key = 'super secret key'  # without this slack will refuse to 'flash'
+app.secret_key = 'super secret key'  # without this flask will refuse to 'flash'
 messages = []
 
 weather_proxy = AccuweatherProxy(apikey="ADuP1UGtZCSRyLyM2lRcSTalxzBxbaqD")  # Artur's demo temporary key
