@@ -10,16 +10,16 @@ from accuweather_proxy import AccuweatherProxy
 @pytest.fixture
 def city_key_expected_response_requests_mock():
     response_mock = MagicMock()
-    requests_mock = MagicMock()
-    # TODO mock the response in a pretty way
+    response_mock.json = MagicMock(return_value=[{"Key": "test_city_key"}])
+    requests_mock = MagicMock(return_value=response_mock)
     return requests_mock
 
 
 @pytest.fixture
 def city_key_empty_response_requests_mock():
     response_mock = MagicMock()
-    requests_mock = MagicMock()
-    # TODO mock the response in a pretty way
+    response_mock.json = MagicMock(return_value=[])
+    requests_mock = MagicMock(return_value=response_mock)
     return requests_mock
 
 
